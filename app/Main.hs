@@ -46,7 +46,7 @@ main :: IO ()
 main = do
   shibor <- readCSV "data/shibor.csv"
   option <- readCSV "data/options.csv" >>= \df -> dropDuplicateAtS df ["DATE", "EXE_ENDDATE", "EXE_MODE", "EXE_PRICE", "CLOSE"]
-  tradeDay <- readCSV "data/tradeday.csv" >>= \i -> sortPN cores i "DateTime" True >>= \i -> MI.filter i $ \j -> (>= fromString "2015/10/18") <$> j ..> "DateTime"
+  tradeDay <- readCSV "data/tradeday.csv" >>= \i -> sortPN cores i "DateTime" True
   let action0 = joinPN cores tradeDay option "option" $ \t o -> (==) <$> t ..> "DateTime" <*> o ..> "DATE"
   let action1 = joinPN cores tradeDay shibor "shibor" $ \t s -> (\t1 t2 -> parseDate "%Y/%m/%d" (toText t1) == parseDate "%Y-%m-%d" (toText t2)) <$> t ..> "DateTime" <*> s ..> "col-0"
   action0 `concurrently_` action1
