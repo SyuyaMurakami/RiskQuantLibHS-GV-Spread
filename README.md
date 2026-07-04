@@ -5,7 +5,7 @@ This project is a further development of Alexdachen’s ivix China Volatility In
 
 [Alexdachen’s ivix China Volatility Index Project](https://github.com/Alexdachen/ivix)
 
-[CBOE, VIX White Paper](http://www.cboe.com/products/vix-index-volatility/vix-options-and-futures/vix-index/the-vix-index-calculation)
+[CBOE, VIX White Paper](https://www.cboe.com/tradable-products/vix/faqs/)
 
 [Definition and Advantages of GVIX](https://www.researchgate.net/publication/272306461_Does_VIX_Truly_Measure_Return_Volatility)
 
